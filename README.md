@@ -1,124 +1,71 @@
-# Cadastro de Clientes em C#
+## 📈 Project Evolution
 
-Projeto desenvolvido em **C# (Console Application)** com o objetivo de praticar conceitos fundamentais de programação, organização de código e manipulação de arquivos.
-
----
-
-## 📌 Objetivo do Projeto
-
-Criar uma aplicação de console que permita **cadastrar clientes informando alguns dados básicos** e salvar essas informações em um **arquivo TXT** na máquina local.
-
-O usuário informa os dados pelo console e o sistema grava as informações no arquivo utilizando **StreamWriter**.
+Este projeto foi criado com o objetivo de praticar e consolidar conhecimentos em **desenvolvimento backend com C# e .NET**.
+O sistema está sendo desenvolvido de forma **incremental**, onde cada versão adiciona novos conceitos e melhorias na arquitetura.
 
 ---
 
-## ⚙️ Funcionalidades
+### 🟢 v1 — Console Application + TXT Storage
 
-* Solicitar dados do cliente via console:
+Primeira versão funcional do sistema de cadastro de clientes.
+
+**Principais características:**
+
+* Cadastro de clientes via aplicação **Console**
+* Captura de dados do usuário (`nome`, `email`, `telefone`)
+* Persistência de dados em arquivo `.txt`
+* Utilização de `StreamWriter` para gravação dos registros
+* Estrutura inicial do projeto com separação de responsabilidades:
+
+  * `Entities`
+  * `Repositories`
+
+Essa versão teve como objetivo praticar **fundamentos de C#**, manipulação de arquivos e organização básica de código.
+
+---
+
+### 🟡 v2 — Integração com Banco de Dados SQL *(Em desenvolvimento)*
+
+Nesta etapa o sistema evolui para utilizar **banco de dados relacional** em vez de arquivos `.txt`.
+
+**Objetivos da versão:**
+
+* Conectar a aplicação a um banco de dados SQL
+* Criar a tabela `Clientes`
+* Persistir dados utilizando `SqlConnection`
+* Melhorar a camada de acesso a dados (Repository)
+
+Essa etapa introduz conceitos de **persistência de dados e integração com banco de dados**.
+
+---
+
+### 🔵 v3 — Validações e Melhor Organização do Código
+
+Foco em melhorar a **qualidade e estrutura do código**.
+
+**Melhorias planejadas:**
+
+* Implementação de camada de **validações**
+* Validação de campos obrigatórios:
 
   * Nome
   * Email
   * Telefone
+* Melhor separação de responsabilidades no projeto
+* Código mais limpo e organizado seguindo boas práticas
 
-* Criar um objeto **Cliente**
-
-* Registrar a **data e hora do cadastro**
-
-* Salvar os dados em um **arquivo TXT**
+Essa fase reforça conceitos importantes de **arquitetura e manutenção de software**.
 
 ---
 
-## 🧠 Conceitos aplicados
+### 🚀 v4 — Próximos Passos
 
-Durante o desenvolvimento deste projeto foram utilizados conceitos importantes de C#:
+Possíveis evoluções futuras do projeto:
 
-* Classes e Objetos
-* Propriedades (`get` / `set`)
-* Organização em **camadas**
-* Separação de responsabilidades
-* Manipulação de arquivos com **StreamWriter**
-* Uso de **DateTime**
+* Implementação de **CRUD completo de clientes**
+* Criação de um **menu interativo no console**
+* Transformação do projeto em uma **API REST com ASP.NET**
+* Aplicação de princípios **SOLID**
+* Possível criação de uma **interface web**
 
----
-
-## 🏗 Estrutura do Projeto
-
-```
-CadastroDeClientes
-│
-├── Entities
-│   └── Cliente.cs
-│
-├── Repositories
-│   └── ClienteRepository.cs
-│
-├── Program.cs
-│
-└── README.md
-```
-
-**Entities**
-
-* Representa as entidades do sistema.
-
-**Repositories**
-
-* Responsável por salvar os dados no arquivo.
-
-**Program**
-
-* Responsável pela interação com o usuário no console.
-
----
-
-## 💻 Exemplo de Execução
-
-Entrada informada pelo usuário no console:
-
-```
-Nome: João
-Email: joao@email.com
-Telefone: 219999999
-```
-
----
-
-## 📄 Resultado Gerado
-
-Após o cadastro, os dados são salvos em um **arquivo TXT** no computador.
-
-Exemplo do conteúdo do arquivo:
-
-```
-João;joao@email.com;219999999;17/03/2026 00:30
-```
-
----
-
-## 🧪 Resultado do Projeto
-
-Aqui você pode adicionar um **print do programa rodando** ou do **arquivo TXT gerado**.
-
-## Execução do programa
-
-![Execução](CadastrodeClientes/Images/execucao.jpeg)
-
-## Arquivo TXT gerado
-
-![Resultado](CadastrodeClientes/Images/resultado.jpeg)
----
-
-## 🚀 Tecnologias utilizadas
-
-* C#
-* .NET
-* Console Application
-
----
-
-## 👨‍💻 Autor
-
-Edgard Pimenta
-
-GitHub:
-https://github.com/edgardpimenta
+O objetivo final é evoluir o projeto de um **exercício de console** para uma **aplicação backend mais completa**.
