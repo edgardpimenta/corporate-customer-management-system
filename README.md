@@ -99,9 +99,13 @@ João;joao@email.com;219999999;17/03/2026 00:30
 
 Aqui você pode adicionar um **print do programa rodando** ou do **arquivo TXT gerado**.
 
-![Execução do programa](images/execucao.jpeg)
+## Execução do programa
 
-![Arquivo TXT gerado](images/resultado.jpeg)
+![Execução](CadastrodeClientes/Images/execucao.jpeg)
+
+## Arquivo TXT gerado
+
+![Resultado](CadastrodeClientes/Images/resultado.jpeg)
 ---
 
 ## 🚀 Tecnologias utilizadas
