@@ -24,37 +24,55 @@ Essa versão teve como objetivo praticar **fundamentos de C#**, manipulação de
 
 ---
 
-### 🟡 v2 — Integração com Banco de Dados SQL *(Em desenvolvimento)*
+### 🟡 v2 — Modelagem de Domínio + Preparação para SQL *(Em desenvolvimento)*
 
-Nesta etapa o sistema evolui para utilizar **banco de dados relacional** em vez de arquivos `.txt`.
+Nesta etapa o projeto está sendo reestruturado para evoluir de um modelo simples para uma base mais próxima de sistemas reais.
+
+**O que já foi implementado:**
+
+* Criação da entidade `Empresa`
+* Definição do relacionamento **1:N (Empresa → Clientes)**
+* Criação de **Enums** para controle de status e tipos
+* Implementação da camada de **Controllers**
+* Separação de responsabilidades no projeto:
+
+  * `Entities`
+  * `Controllers`
+  * `Validations`
+  * `Enums`
+* Início da camada de **Validações**
+* Estrutura preparada para futura integração com banco de dados
 
 **Objetivos da versão:**
 
-* Conectar a aplicação a um banco de dados SQL
-* Criar a tabela `Clientes`
-* Persistir dados utilizando `SqlConnection`
-* Melhorar a camada de acesso a dados (Repository)
+* Integrar com banco de dados SQL
+* Criar tabela `Clientes`
+* Implementar verificação de regras como **CPF único**
+* Persistir dados utilizando `SqlConnection` ou ORM futuramente
 
-Essa etapa introduz conceitos de **persistência de dados e integração com banco de dados**.
+Essa etapa introduz conceitos de **modelagem de domínio, organização de código e preparação para persistência em banco de dados**.
 
 ---
 
-### 🔵 v3 — Validações e Melhor Organização do Código
+### 🔵 v3 — Validações e Regras de Negócio
 
-Foco em melhorar a **qualidade e estrutura do código**.
+Foco em melhorar a **qualidade, consistência e regras do sistema**.
 
 **Melhorias planejadas:**
 
-* Implementação de camada de **validações**
+* Implementação completa da camada de **validações**
 * Validação de campos obrigatórios:
 
   * Nome
   * Email
-  * Telefone
-* Melhor separação de responsabilidades no projeto
-* Código mais limpo e organizado seguindo boas práticas
+  * CPF
+* Implementação de **regras de negócio**, como:
 
-Essa fase reforça conceitos importantes de **arquitetura e manutenção de software**.
+  * Cliente bloqueado não pode realizar ações
+* Melhor organização do código seguindo boas práticas
+* Separação clara entre **validação e regra de negócio**
+
+Essa fase reforça conceitos importantes de **arquitetura, domínio e manutenção de software**.
 
 ---
 
@@ -66,4 +84,5 @@ Possíveis evoluções futuras do projeto:
 * Criação de um **menu interativo no console**
 * Transformação do projeto em uma **API REST com ASP.NET**
 * Aplicação de princípios **SOLID**
+* Integração com banco de dados utilizando ORM (Entity Framework)
 * Possível criação de uma **interface web**
