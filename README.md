@@ -67,5 +67,3 @@ Possíveis evoluções futuras do projeto:
 * Transformação do projeto em uma **API REST com ASP.NET**
 * Aplicação de princípios **SOLID**
 * Possível criação de uma **interface web**
-
-O objetivo final é evoluir o projeto de um **exercício de console** para uma **aplicação backend mais completa**.
