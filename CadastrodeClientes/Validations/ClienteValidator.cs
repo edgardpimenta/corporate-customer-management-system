@@ -11,7 +11,7 @@ namespace CadastrodeClientes.Validations
     {
         public void ValidarCliente(Cliente cliente,string nome, string cpf, string email)
         {
-
+            
 
             if (string.IsNullOrWhiteSpace(cpf) || cpf.Length < 11)
             {
