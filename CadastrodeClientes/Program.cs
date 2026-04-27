@@ -1,3 +1,3 @@
 ﻿using CadastrodeClientes.Controllers;
 
-ClienteController.GerenciarProdutos();
+ClienteController.GerenciarClientes();
