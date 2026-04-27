@@ -24,17 +24,49 @@ Status: ✅ Finalizado
 
 🟡 v2 — Modelagem de Domínio + Relacionamentos
 
-Evolução para uma estrutura mais próxima de sistemas reais.
+Nesta versão, o projeto evolui de uma estrutura básica para uma abordagem mais próxima de aplicações reais, com foco em organização, domínio e separação de responsabilidades.
 
-✔ Criação da entidade Empresa  
-✔ Relacionamento 1:N (Empresa → Clientes)  
-✔ Uso de Enums (Status, Tipo de Cliente)  
-✔ Introdução da camada de Controllers  
-✔ Início da camada de validações  
+🚀 Principais melhorias
 
-Objetivo: aplicar conceitos de modelagem de domínio e organização de código.
+✔ Modelagem de Domínio aprimorada
 
-Status: 🚧 Em desenvolvimento
+Introdução da entidade Empresa
+Estruturação do relacionamento 1 (Empresa → Clientes)
+Uso de encapsulamento nas entidades (private set) para maior controle das regras de negócio
+
+✔ Aplicação de Enumerações (Enums)
+
+Implementação de StatusCliente (Ativo, Inativo, Bloqueado)
+Implementação de TipoCliente (Pessoa Física, Pessoa Jurídica)
+Uso dos enums dentro da lógica de domínio (não apenas estrutural)
+
+✔ Separação de camadas (Arquitetura)
+
+Introdução da camada de Controllers para orquestração das requisições
+Criação da camada de Repositories para acesso a dados
+Organização inicial visando baixo acoplamento
+
+✔ Uso de DTOs (Data Transfer Objects)
+
+Separação entre entrada e saída de dados
+Evita exposição direta das entidades do domínio
+Preparação para escalabilidade e versionamento de API
+
+✔ Validações no domínio
+
+Regras de negócio movidas para dentro das entidades
+Redução de lógica nos controllers
+Maior consistência e proteção do modelo de dados
+🎯 Objetivo da versão
+
+Aplicar conceitos fundamentais de:
+
+Modelagem de domínio
+Boas práticas em orientação a objetos
+Separação de responsabilidades
+Estruturação inicial em camadas
+
+Status: ✅ Finalizado 
 
 ---
 
