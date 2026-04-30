@@ -43,21 +43,22 @@ public class ClienteController
 
             var cliente = new Cliente(createClienteDto.Nome, createClienteDto.Email, createClienteDto.Cpf);
 
-            Console.WriteLine("Informe o Tipo de Cliente:" +
-                "1 - PessoaFisica" +
-                "2 - PessoaJuridica");
-            cliente.TipoDeCliente = (TipoDeCliente)Enum.Parse(typeof(TipoDeCliente), Console.ReadLine() ?? "");
+            Console.WriteLine("Informe o Tipo de Cliente: " +
+                "1- PessoaFisica " +
+                "2- PessoaJuridica ");
+            cliente.TipoDeCliente = (TipoDeCliente)Enum.Parse(typeof(TipoDeCliente),Console.ReadLine() ?? "");
 
-            Console.WriteLine("Informe a Empresa do Cliente:" +
-                "1 - MEI" +
-                "2 - LTDA" +
-                "3 - SA");
-            cliente.EmpresaId = Guid.Parse(Console.ReadLine() ?? string.Empty);
+            Console.WriteLine("Informe a Empresa do Cliente: " +
+                "1 -MEI " +
+                "2 -LTDA " +
+                "3 -SA ");
+            cliente.TipoDeEmpresa = (TipoDeEmpresa)Enum.Parse(typeof(TipoDeEmpresa),Console.ReadLine() ?? "");
 
-            Console.WriteLine("Informe o Status do Cliente:" +
-                "1 - Ativo" +
-                "2 - Inativo" +
-                "3 - Bloqueado");
+
+            Console.WriteLine("Informe o Status do Cliente: " +
+                "1 -Ativo" +
+                "2 -Inativo" +
+                "3 -Bloqueado");
             
             repo.CadastrarCliente(cliente);
 
