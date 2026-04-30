@@ -28,6 +28,7 @@ namespace CadastrodeClientes.Entities
         /// </summary>
         public StatusDoCliente Status { get; set; } = StatusDoCliente.Ativo;
         public TipoDeCliente TipoDeCliente { get; set; }
+        public TipoDeEmpresa TipoDeEmpresa { get; set; }
 
 
         /// <summary>
