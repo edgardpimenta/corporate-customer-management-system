@@ -70,16 +70,63 @@ Status: ✅ Finalizado
 
 ---
 
-🔵 v3 — Regras de Negócio e Validações
+🔵 v3 — Business Rules & Validation Layer
 
-Foco em consistência e integridade dos dados.
+Evolução focada em consistência, integridade e proteção do domínio, aproximando o sistema de cenários reais de produção.
 
-✔ Validação de CPF, Email e Nome  
-✔ Separação entre validação e regra de negócio  
-✔ Regras como:
-   - Cliente bloqueado não pode executar determinadas ações  
+🚀 Principais melhorias
+✔ Validações estruturadas
 
-Objetivo: garantir integridade e confiabilidade do sistema.
+Implementação de validações robustas para garantir a integridade dos dados:
+
+Validação de CPF
+Validação de Email
+Validação de Nome (regras mínimas e formato)
+
+As validações são tratadas de forma centralizada, evitando duplicação de lógica.
+
+✔ Separação entre validação e regra de negócio
+
+Refatoração do código para separar claramente:
+
+Validações → garantem que os dados são válidos
+Regras de negócio → definem o comportamento do sistema
+
+Isso reduz acoplamento e melhora a manutenção.
+
+✔ Regras de negócio explícitas no domínio
+
+Implementação de regras que refletem cenários reais:
+
+Cliente com status Bloqueado não pode:
+ser atualizado
+executar ações específicas do sistema
+
+As regras passam a ser protegidas diretamente nas entidades ou serviços de domínio.
+
+✔ Maior proteção do modelo de domínio
+Redução de alterações inválidas nos objetos
+Regras centralizadas
+Menor risco de inconsistência de dados
+🎯 Objetivo da versão
+
+Consolidar conceitos essenciais de backend:
+
+Separação de responsabilidades
+Regras de negócio bem definidas
+Validação consistente de dados
+Proteção do domínio contra estados inválidos
+📈 Resultado
+
+O sistema passa a ter:
+
+Maior confiabilidade
+Código mais organizado
+Facilidade de manutenção
+Base sólida para evolução (API e banco de dados)
+📌 Status
+
+Status: ✅ Finalizado
 
 ---
 
