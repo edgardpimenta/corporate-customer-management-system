@@ -14,8 +14,8 @@ namespace CadastrodeClientes.Repositories
 
        public void CadastrarCliente(Cliente cliente)
         {
-            var query = @"INSERT INTO Cliente (Id, Nome, Cpf, Email, DataCadastro, EmpresaId, Status, TipoDeCliente) 
-                          VALUES (@Id, @Nome, @Cpf, @Email, @DataCadastro, @EmpresaId, @Status, @TipoDeCliente)";
+            var query = @"INSERT INTO Cliente (Id, Nome, Cpf, Email, DataCadastro, EmpresaId) 
+                          VALUES (@Id, @Nome, @Cpf, @Email, @DataCadastro, @EmpresaId)";
 
             using (var connection = new SqlConnection(connectionString))
             {
@@ -27,7 +27,7 @@ namespace CadastrodeClientes.Repositories
 
         public void AtualizarCliente(Cliente cliente)
         {
-            var query = @"UPDATE Clientes
+            var query = @"UPDATE Cliente
                           SET Nome = @Nome, Cpf = @Cpf, Email = @Email, DataCadastro = 
                            @DataCadastro, EmpresaId = @EmpresaId, Status = @Status, TipoDeCliente = @TipoDeCliente
                             WHERE Id = @Id";
@@ -40,7 +40,7 @@ namespace CadastrodeClientes.Repositories
 
         public void DeletarCliente(Guid id)
         {
-            var query = @"DELETE FROM Clientes
+            var query = @"DELETE FROM Cliente
                           WHERE Id = @Id";
 
             using (var connection = new SqlConnection(connectionString))
@@ -52,7 +52,7 @@ namespace CadastrodeClientes.Repositories
 
         public void BuscarClienteporId(Guid id)
         {
-            var query = @"SELECT * FROM Clientes
+            var query = @"SELECT * FROM Cliente
                           WHERE Id = @Id";
 
             using(var connection = new SqlConnection(connectionString))
@@ -72,7 +72,7 @@ namespace CadastrodeClientes.Repositories
 
         public List<Cliente>ListarClientes()
         {
-            var query = @"SELECT * FROM Clientes";
+            var query = @"SELECT * FROM Cliente";
 
             using (var connection = new SqlConnection(connectionString))
             {

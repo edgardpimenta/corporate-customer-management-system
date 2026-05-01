@@ -93,6 +93,16 @@ namespace CadastrodeClientes.Entities
 
             }
         }
+
+        public Cliente(Guid Id, string Nome, string Cpf, string Email, DateTime DataCadastro, Guid EmpresaId)
+        {
+            this.Id = Id;
+            this.Nome = Nome;
+            this.Cpf = Cpf;
+            this.Email = Email;
+            this.DataCadastro = DataCadastro;
+            this.EmpresaId = EmpresaId;
+        }
     }
 }
 

@@ -1,6 +1,7 @@
 ﻿using CadastrodeClientes.Dtos;
 using CadastrodeClientes.Entities;
 using CadastrodeClientes.Enums;
+using CadastrodeClientes.Repositories;
 using CadastrodeClientes.Validations;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ public class ClienteController
     {
         var createClienteDto = new CreateClienteDto();
         var repo = new CadastrodeClientes.Repositories.ClienteRepository(); // Instanciando o repositório para acessar os métodos de cadastro e listagem de clientes
+        var repoEmpresa = new CadastrodeClientes.Repositories.EmpresaRepository();
 
         Console.WriteLine("\nMENU DE CADASTRO DE CLIENTE:\n");
         Console.WriteLine("1 - Cadastrar Cliente");
@@ -44,26 +46,31 @@ public class ClienteController
             var cliente = new Cliente(createClienteDto.Nome, createClienteDto.Email, createClienteDto.Cpf);
 
             Console.WriteLine("Informe o Tipo de Cliente: " +
-                "1- PessoaFisica " +
-                "2- PessoaJuridica ");
+                "\n1- PessoaFisica\n" +
+                "\n2- PessoaJuridica\n");
             cliente.TipoDeCliente = (TipoDeCliente)Enum.Parse(typeof(TipoDeCliente),Console.ReadLine() ?? "");
 
-            Console.WriteLine("Informe a Empresa do Cliente: " +
-                "1 -MEI " +
-                "2 -LTDA " +
-                "3 -SA ");
+            Console.WriteLine("Informe o nome da Empresa do Cliente:");
+            var nomeEmpresa = Console.ReadLine() ?? string.Empty;
+            
+
+            Console.WriteLine("Informe o Tipo de Empresa do Cliente: " +
+                "\n1 -MEI\n" +
+                "\n2 -LTDA\n" +
+                "\n3 -SA\n");
             cliente.TipoDeEmpresa = (TipoDeEmpresa)Enum.Parse(typeof(TipoDeEmpresa),Console.ReadLine() ?? "");
 
 
             Console.WriteLine("Informe o Status do Cliente: " +
-                "1 -Ativo" +
-                "2 -Inativo" +
-                "3 -Bloqueado");
-            
-            repo.CadastrarCliente(cliente);
+                "\n1 -Ativo\n" +
+                "\n2 -Inativo\n" +
+                "\n3-Bloqueado\n");
 
-            Console.WriteLine($"Cliente salvo com sucesso!" +
-                $"Cliente: {createClienteDto.Nome}, {createClienteDto.Email}, {createClienteDto.Cpf}");
+            StatusDoCliente status = (StatusDoCliente)Enum.Parse(typeof(StatusDoCliente), Console.ReadLine() ?? "");
+
+            Console.WriteLine($"Cliente salvo com sucesso!\n" +
+                $"Cliente:\n Nome: {createClienteDto.Nome}, Email:{createClienteDto.Email}, Cpf:{createClienteDto.Cpf}, Tipo de Cliente:{cliente.TipoDeCliente}, Tipo de Empresa: {cliente.TipoDeEmpresa}");
+            repo.CadastrarCliente(cliente);
         }
 
         if (opcao == "2")
@@ -72,7 +79,7 @@ public class ClienteController
 
             foreach (var Cliente in clientes)
             {
-                Console.WriteLine($"Cliente: {Cliente.Nome}, {Cliente.Email}, {Cliente.Cpf}");
+                Console.WriteLine($"Cliente:\n ID: {Cliente.Id} NOME: {Cliente.Nome}, EMAIL: {Cliente.Email}, CPF: {Cliente.Cpf}");
             }
         }
 
