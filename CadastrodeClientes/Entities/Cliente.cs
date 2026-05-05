@@ -20,7 +20,7 @@ namespace CadastrodeClientes.Entities
         public DateTime DataCadastro { get; set; } = DateTime.UtcNow;
 
         public Guid EmpresaId { get; set; } // Chave estrangeira para a empresa associada ao cliente
-        public Empresa Empresa { get; set; } = new();// Propriedade de navegação para a empresa associada ao cliente
+        public Empresa Empresa { get; set; } // Propriedade de navegação para a empresa associada ao cliente
 
 
         /// <summary>
@@ -91,6 +91,11 @@ namespace CadastrodeClientes.Entities
                 this.Cpf = Cpf;
                 throw new ArgumentException("CPF deve conter exatamente 11 dígitos numéricos.");
 
+            }
+
+            if ((Status == StatusDoCliente.Bloqueado) || (Status == StatusDoCliente.Inativo))
+            {
+                throw new ArgumentException("O cliente não pode ser cadastrado, pois está bloqueado ou inativo.");
             }
         }
 
